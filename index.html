@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>철의 언어v2 - 방명록</title>
+    <!-- Premium Serif Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Noto+Serif+KR:wght@200;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body class="vibe-ore">
+    <!-- Ambient Molten Metal Glows (Color controlled via JS using body class) -->
+    <div class="ambient-glow glow-primary"></div>
+    <div class="ambient-glow glow-secondary"></div>
+
+    <div class="gallery-wrapper">
+        <!-- Fine Art Structural Grid Lines -->
+        <div class="structure-line line-v-left"></div>
+        <div class="structure-line line-v-right"></div>
+        <div class="structure-line line-h-top"></div>
+        <div class="structure-line line-h-bottom"></div>
+        <div class="crosshair-marker marker-top-left"></div>
+        <div class="crosshair-marker marker-top-right"></div>
+        <div class="crosshair-marker marker-bottom-left"></div>
+        <div class="crosshair-marker marker-bottom-right"></div>
+
+        <!-- Header -->
+        <header class="gallery-header">
+            <div class="exhibition-title">
+                <span class="exhibition-subtitle">우쥬인간</span>
+                <h1>철의 언어v2 : 흔적</h1>
+            </div>
+            <div class="system-meta-top">
+                <span id="demo-indicator" class="demo-badge hidden">데모 모드</span>
+                <span class="exhibition-clock" id="live-clock">00:00:00</span>
+            </div>
+        </header>
+
+        <!-- Main Workspace -->
+        <main class="gallery-main">
+            <div class="guestbook-container">
+                
+                <!-- Left: Interactive Form Panel -->
+                <div class="form-panel">
+                    <div class="panel-header">
+                        <span class="panel-label">ENGRAVE TRACE</span>
+                        <h2>철에 흔적을 새기다</h2>
+                        <p class="poetic-desc">
+                            철의 언어가 결국 여러분의 언어로 번역되었으면 좋겠습니다.<br>
+                            여러분의 언어가 듣고 싶습니다.
+                        </p>
+                    </div>
+
+                    <form id="guestbook-form" class="artistic-form">
+                        <!-- Name Field -->
+                        <div class="input-group">
+                            <input type="text" id="name-input" name="name" required maxlength="15" autocomplete="off" placeholder=" ">
+                            <label for="name-input">이름 / 익명 (Name)</label>
+                            <span class="input-bar"></span>
+                        </div>
+
+                        <!-- Message Field -->
+                        <div class="input-group">
+                            <textarea id="message-input" name="message" required maxlength="200" rows="3" placeholder=" "></textarea>
+                            <label for="message-input">새길 흔적 (Message)</label>
+                            <span class="input-bar"></span>
+                            <div class="char-count"><span id="char-current">0</span>/200</div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" id="submit-btn" class="poetic-submit-btn">
+                            <span class="btn-text">[ 흔적 새기기 ]</span>
+                            <span class="btn-text-en">Engrave Trace</span>
+                            <div class="btn-glow"></div>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Vertical Divider Line in the Grid -->
+                <div class="grid-divider"></div>
+
+                <!-- Right: Dynamic Feed Panel -->
+                <div class="feed-panel">
+                    <div class="panel-header feed-header">
+                        <span class="panel-label">RECORDED FRICTION</span>
+                        <h2>새겨진 흔적들</h2>
+                        <span id="refresh-indicator" class="refresh-badge">실시간 동기화 중</span>
+                    </div>
+
+                    <!-- Scrollable message feed -->
+                    <div id="messages-feed" class="messages-feed-container">
+                        <div class="feed-loading">흔적을 불러오는 중...</div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="gallery-footer">
+            <div class="system-meta">
+                <span>GUESTBOOK SYSTEM v1.0</span>
+                <span class="dot-spacer">•</span>
+                <a href="admin.html" id="admin-link">ADMIN SETTINGS</a>
+            </div>
+            <div class="curator-credit">
+                <span>우쥬인간</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Alert / Toast Message -->
+    <div id="toast" class="toast hidden">
+        <span id="toast-message">알림</span>
+    </div>
+
+    <script src="static/js/main.js"></script>
+</body>
+</html>
