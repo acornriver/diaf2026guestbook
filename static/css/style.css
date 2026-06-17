@@ -48,6 +48,11 @@ body.vibe-charcoal {
     box-sizing: border-box;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-primary);
@@ -79,6 +84,17 @@ body::after {
 }
 
 /* Ambient Molten Iron Glows */
+.ambient-glow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
 .ambient-glow {
     position: absolute;
     border-radius: 50%;
@@ -903,6 +919,7 @@ body::after {
     padding: 16px;
     max-height: 250px;
     overflow-y: auto;
+    overflow-x: auto;
     margin-bottom: 30px;
 }
 
@@ -934,8 +951,10 @@ body::after {
 @media (max-width: 992px) {
     body {
         overflow-y: auto;
+        overflow-x: hidden;
         height: auto;
         min-height: 100vh;
+        width: 100%;
     }
     
     .gallery-wrapper {
