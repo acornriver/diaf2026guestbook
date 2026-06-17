@@ -951,7 +951,7 @@ body::after {
     
     .guestbook-container, .admin-container {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 36px;
         height: auto;
         overflow: visible;
     }
@@ -962,42 +962,152 @@ body::after {
     }
     
     .messages-feed-container {
-        max-height: 500px;
+        max-height: 520px;
+    }
+
+    .panel-header h2 {
+        white-space: normal;
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
 }
 
 @media (max-width: 576px) {
     .gallery-wrapper {
-        padding: 50px 20px;
+        padding: 40px 16px;
     }
     
-    .line-v-left { left: 10px; }
-    .line-v-right { right: 10px; }
-    .line-h-top { top: 10px; }
-    .line-h-bottom { bottom: 10px; }
+    .line-v-left { left: 8px; }
+    .line-v-right { right: 8px; }
+    .line-h-top { top: 8px; }
+    .line-h-bottom { bottom: 8px; }
     
-    .marker-top-left { top: 6px; left: 6px; }
-    .marker-top-right { top: 6px; right: 6px; }
-    .marker-bottom-left { bottom: 6px; left: 6px; }
-    .marker-bottom-right { bottom: 6px; right: 6px; }
+    .marker-top-left { top: 4px; left: 4px; }
+    .marker-top-right { top: 4px; right: 4px; }
+    .marker-bottom-left { bottom: 4px; left: 4px; }
+    .marker-bottom-right { bottom: 4px; right: 4px; }
     
+    .gallery-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding-bottom: 16px;
+    }
+
     .gallery-header h1 {
-        font-size: 1.6rem;
+        font-size: 1.45rem;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        line-height: 1.35;
+    }
+    
+    .system-meta-top {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 12px;
+    }
+
+    .feed-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .panel-header {
+        margin-bottom: 20px;
+    }
+
+    .panel-header h2 {
+        font-size: 1.35rem;
+        line-height: 1.3;
+    }
+
+    .input-group label {
+        font-size: 0.92rem;
+    }
+
+    .input-group input:focus ~ label,
+    .input-group input:not(:placeholder-shown) ~ label,
+    .input-group textarea:focus ~ label,
+    .input-group textarea:not(:placeholder-shown) ~ label {
+        top: -14px;
+        font-size: 0.75rem;
+    }
+
+    .input-help-text {
+        font-size: 0.75rem;
+        margin-top: 6px;
+    }
+
+    .message-card {
+        padding: 16px 18px;
+        gap: 10px;
+    }
+
+    .card-header {
+        flex-wrap: wrap;
+        gap: 6px;
+        align-items: center;
+    }
+
+    .card-name {
+        font-size: 0.95rem;
+    }
+
+    .card-date {
+        font-size: 0.72rem;
+    }
+
+    .card-content {
+        font-size: 0.88rem;
+        line-height: 1.5;
+    }
+
+    .static-notice-box {
+        padding: 12px;
+        font-size: 0.8rem;
+        margin-top: 18px;
+    }
+
+    .code-box-container {
+        max-height: 200px;
+        padding: 12px;
+    }
+
+    .code-box-container code {
+        font-size: 0.75rem;
     }
     
     .vibe-options {
         grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .vibe-option-card {
+        padding: 10px 6px;
     }
     
     .gallery-footer {
         flex-direction: column;
         gap: 12px;
         align-items: flex-start;
+        padding-top: 16px;
+    }
+
+    .admin-actions {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 12px;
+    }
+
+    .poetic-btn {
+        width: 100%;
+        padding: 12px;
     }
 }
 
 /* Height-based Responsiveness for standard viewports (prevent vertical clipping) */
-@media (max-height: 850px) {
+@media (max-height: 850px) and (min-width: 993px) {
     .gallery-wrapper {
         padding: 40px 80px;
     }
